@@ -31,5 +31,6 @@
 
 ## Environment & Configuration
 - Manage secrets with Vite environment files such as `.env.local`; never commit real tokens. Example: `VITE_MAPBOX_TOKEN=...`.
+- Configure the chatbot session endpoint with `VITE_CHATKIT_SESSION_URL` if your API is hosted anywhere other than `/api/chatkit/session`.
 - Register new routes in `src/App.tsx` above the catch-all `*` entry to preserve 404 handling.
 - Update `tailwind.config.ts` content globs if you add new top-level directories so Tailwind does not purge required classes.

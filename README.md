@@ -7,6 +7,7 @@ Trekwise Adventure Blueprint is a Vite-powered React + TypeScript single-page ap
 - Route-based pages for FAQs, sustainability messaging, and individual trip details using React Router.
 - UI built on shadcn/ui primitives, Tailwind CSS theming, and lucide-react iconography.
 - Toast notifications, responsive navigation, and query-ready data layer via TanStack Query.
+- Site-wide AI concierge powered by OpenAI ChatKit for itinerary support, gear questions, and sustainability tips.
 
 ## Quick Start
 1. Install Node.js 18+ and npm.
@@ -45,3 +46,7 @@ public/             # Static assets served verbatim
 
 ## Deployment
 - Run `npm run build` and serve the `dist/` directory using a static host or Vite-friendly platform (e.g., Netlify, Vercel). For Lovable-managed deployments, publish via the associated project dashboard.
+
+## Retrieval Augementation Generation
+
+This is the link to the sample Notion page: https://www.notion.so/Trekwise-Adventure-28bdc0b7129780968c8dc01850e3d8a6?source=copy_link
