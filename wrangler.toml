@@ -1,0 +1,4 @@
+name = "trekwise-adventure-blueprint"
+compatibility_date = "2025-10-13"
+main = "functions/index.ts"
+pages_build_output_dir = "dist"

@@ -13,8 +13,10 @@ export const ChatAssistant = ({ className }: ChatAssistantProps) => {
     () => import.meta.env.VITE_CHATKIT_SESSION_URL ?? DEFAULT_SESSION_ENDPOINT,
     [],
   );
+  const workflowId = import.meta.env.VITE_CHATKIT_WORKFLOW_ID;
 
   const { control, status, error } = useChatKit({
+    workflow: workflowId ? { id: workflowId } : undefined,
     api: {
       async getClientSecret(existing) {
         if (existing) {
@@ -58,6 +60,19 @@ export const ChatAssistant = ({ className }: ChatAssistantProps) => {
         )}
       >
         Failed to start chat. Check your ChatKit session endpoint.
+      </div>
+    );
+  }
+
+  if (!workflowId) {
+    return (
+      <div
+        className={cn(
+          "flex h-[600px] w-full max-w-md items-center justify-center rounded-lg border border-border bg-muted/40 text-muted-foreground",
+          className,
+        )}
+      >
+        Missing VITE_CHATKIT_WORKFLOW_ID. Add it to your Vite environment.
       </div>
     );
   }

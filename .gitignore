@@ -27,8 +27,11 @@ dist-ssr
 .env
 .env.*
 .env.local
+.dev.vars
 
 # Testing artifacts
 coverage
 coverage-*
 .vitest
+
+.wrangler

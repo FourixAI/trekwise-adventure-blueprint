@@ -39,6 +39,7 @@ public/             # Static assets served verbatim
 - Tailwind CSS drives layout and design tokens; extend utilities in `tailwind.config.ts`.
 - Reusable UI components live in `src/components/ui`, generated from shadcn/ui recipes and adapted for this project.
 - Favor the `@/` path alias defined in `tsconfig.json` for internal imports.
+- The floating assistant relies on a Cloudflare Pages Function defined in `functions/api/chatkit/session.ts`.
 
 ## Contribution & Guidelines
 - Follow the contributor playbook in `AGENTS.md` for coding style, testing expectations, and PR etiquette.
@@ -46,6 +47,7 @@ public/             # Static assets served verbatim
 
 ## Deployment
 - Run `npm run build` and serve the `dist/` directory using a static host or Vite-friendly platform (e.g., Netlify, Vercel). For Lovable-managed deployments, publish via the associated project dashboard.
+- To support the AI guide, deploy the Cloudflare Pages Function in `functions/api/chatkit/session.ts` (or another serverless endpoint) and set `OPENAI_API_KEY` and `WORKFLOW_ID` as environment variables. If you host the endpoint elsewhere, update `VITE_CHATKIT_SESSION_URL` accordingly.
 
 ## Retrieval Augementation Generation
 

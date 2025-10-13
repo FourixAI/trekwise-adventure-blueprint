@@ -4,6 +4,7 @@
 - `src/` holds the application code. Pages under `src/pages` map to React Router routes; `src/components` houses layout pieces and shadcn-derived UI primitives under `src/components/ui`. Shared hooks live in `src/hooks`, helpers in `src/lib/utils.ts`, and imagery in `src/assets`. Vite starts from `src/main.tsx` and `src/App.tsx`.
 - `public/` serves static assets unchanged. Place favicons, metadata, or downloadable collateral here.
 - Tooling configs (`vite.config.ts`, `tailwind.config.ts`, `eslint.config.js`, and the `tsconfig*.json` set) define the build pipeline; update them together when introducing new tech.
+- Serverless logic for the global chat assistant lives in `functions/api/chatkit/session.ts`, designed for Cloudflare Pages Functions.
 
 ## Build, Test, and Development Commands
 - `npm install` installs dependencies (Node 18+ recommended).
@@ -32,5 +33,6 @@
 ## Environment & Configuration
 - Manage secrets with Vite environment files such as `.env.local`; never commit real tokens. Example: `VITE_MAPBOX_TOKEN=...`.
 - Configure the chatbot session endpoint with `VITE_CHATKIT_SESSION_URL` if your API is hosted anywhere other than `/api/chatkit/session`.
+- For Cloudflare deployments set `OPENAI_API_KEY` and `WORKFLOW_ID` as Pages Function environment variables; the serverless handler reads them at runtime.
 - Register new routes in `src/App.tsx` above the catch-all `*` entry to preserve 404 handling.
 - Update `tailwind.config.ts` content globs if you add new top-level directories so Tailwind does not purge required classes.
