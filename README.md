@@ -1,73 +1,47 @@
-# Welcome to your Lovable project
+# Trekwise Adventure Blueprint
 
-## Project info
+Trekwise Adventure Blueprint is a Vite-powered React + TypeScript single-page application that showcases sustainable adventure travel packages, detailed trip itineraries, and supporting brand pages.
 
-**URL**: https://lovable.dev/projects/9d539eda-e3d9-4c87-91be-346df8976e2c
+## Features
+- Hero-driven landing page with curated adventures and story-led value props.
+- Route-based pages for FAQs, sustainability messaging, and individual trip details using React Router.
+- UI built on shadcn/ui primitives, Tailwind CSS theming, and lucide-react iconography.
+- Toast notifications, responsive navigation, and query-ready data layer via TanStack Query.
 
-## How can I edit this code?
+## Quick Start
+1. Install Node.js 18+ and npm.
+2. Install dependencies with `npm install`.
+3. Launch the dev server: `npm run dev` (defaults to `http://localhost:5173`).
+4. Create a production build with `npm run build`, then preview locally using `npm run preview`.
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/9d539eda-e3d9-4c87-91be-346df8976e2c) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+## Project Structure
+```text
+src/
+  App.tsx           # Router + providers
+  main.tsx          # Vite entry point
+  pages/            # Route-aligned views (Home, Trips, TripDetail, etc.)
+  components/       # Layout + UI primitives (shadcn-derived under components/ui)
+  hooks/            # Reusable React hooks (e.g., mobile detection, toast helpers)
+  lib/              # Cross-cutting utilities
+  assets/           # Hero imagery and trip photography
+public/             # Static assets served verbatim
 ```
 
-**Edit a file directly in GitHub**
+## Available Scripts
+- `npm run dev` – Start Vite in development mode with hot module replacement.
+- `npm run build` – Produce an optimized bundle in `dist/`.
+- `npm run build:dev` – Output a development-mode bundle for lighter-weight QA snapshots.
+- `npm run preview` – Serve the build output locally for final checks.
+- `npm run lint` – Run ESLint with the configured TypeScript + React Hooks rules.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Styling & Components
+- Tailwind CSS drives layout and design tokens; extend utilities in `tailwind.config.ts`.
+- Reusable UI components live in `src/components/ui`, generated from shadcn/ui recipes and adapted for this project.
+- Favor the `@/` path alias defined in `tsconfig.json` for internal imports.
 
-**Use GitHub Codespaces**
+## Contribution & Guidelines
+- Follow the contributor playbook in `AGENTS.md` for coding style, testing expectations, and PR etiquette.
+- Example environment variables belong in `.env.local`; never commit secrets. Add new variables with the `VITE_` prefix so Vite exposes them to the client.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/9d539eda-e3d9-4c87-91be-346df8976e2c) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Deployment
+- Run `npm run build` and serve the `dist/` directory using a static host or Vite-friendly platform (e.g., Netlify, Vercel). For Lovable-managed deployments, publish via the associated project dashboard.
