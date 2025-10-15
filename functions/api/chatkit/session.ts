@@ -24,8 +24,14 @@ export const onRequest: PagesFunction<Env> = async ({ request, env }) => {
   }
 
   const { OPENAI_API_KEY, WORKFLOW_ID } = env;
-  if (!OPENAI_API_KEY || !WORKFLOW_ID) {
-    return new Response("Missing OPENAI_API_KEY or WORKFLOW_ID.", {
+  if (!OPENAI_API_KEY) {
+    return new Response("Missing OPENAI_API_KEY.", {
+      status: 500,
+      headers: CORS_HEADERS,
+    });
+  }
+  if (!WORKFLOW_ID) {
+    return new Response("Missing WORKFLOW_ID.", {
       status: 500,
       headers: CORS_HEADERS,
     });
